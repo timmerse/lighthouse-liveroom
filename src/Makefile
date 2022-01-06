@@ -1,13 +1,12 @@
-.PHONY: all clean dev prod help
+.PHONY: all clean help
 
 all: .build
 
 .build: package.json Makefile
-	npm install && rm -f .build && touch .build
+	npm install
 
 clean:
-	rm -rf ./node_modules .build
-
+	rm -rf ./node_modules 
 
 help:
 	@echo 'Usage: make [all|clean]'
