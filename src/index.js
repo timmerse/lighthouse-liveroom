@@ -13,6 +13,14 @@ const pkg = require('./package.json');
 // Default to local development env.
 process.env.STAGE = process.env.STAGE || 'local';
 
+// read from index path
+const baseDir = path.dirname(process.argv[1]);
+const envPath = path.join(baseDir, '../conf/env');
+
+if (fs.existsSync(envPath)) {
+  dotenv.config({path: envPath});
+}
+
 // Try to read .env manually, for directly run node.
 ['.', '..'].map(envDir => {
   if (fs.existsSync(path.join(envDir, `.env.${process.env.STAGE}`))) {
