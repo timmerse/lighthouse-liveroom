@@ -105,7 +105,7 @@ router.all('/base/v1/', async (ctx) => {
 app.use(new Router({prefix: `/${process.env.STAGE}`}).use(router.routes()).routes());
 if (process.env.STAGE !== 'prod') app.use(new Router({prefix: `/prod`}).use(router.routes()).routes());
 
-const port = process.env.PORT || 80;
+const port = process.env.PORT || 9000;
 app.listen(port, () => {
   console.log(`Server start on http://localhost:${port}`);
 });
