@@ -52,6 +52,7 @@ exports.main_handler = async (ctx) => {
     updateUtc: room.updateUtc,
     status: room.status,
     nnUsers,
+    cover: room.cover,
   }, `room_detail ok`);
 };
 

@@ -36,6 +36,7 @@ async function queryRoom(q) {
       ownBy: e.ownBy,
       createUtc: e.createUtc,
       updateUtc: e.updateUtc,
+      cover: e.cover,
     };
   });
 }
